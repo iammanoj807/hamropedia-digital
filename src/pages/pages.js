@@ -287,9 +287,10 @@ export function renderExamples(version) {
       <div>
         <p class="eyebrow">Real project</p>
         <h2>Hamropedia.com</h2>
-        <p>My own website, with guides, news in English and Nepali, and free tools used in the browser. I moved it from WordPress to a fast, hand-built website, and kept every old address working, so existing Google links and bookmarks still reach the right page.</p>
+        <p>My own website, with guides, news in English and Nepali, and free tools used in the browser. I built it to be fast, easy to read on any phone, and easy for Google to understand.</p>
         <ul class="ticks">
-          <li>${ICONS.check}Moved from WordPress, with every old address still working</li>
+          <li>${ICONS.check}Fast pages that work well on every phone</li>
+          <li>${ICONS.check}Set up for Google, with clear titles, descriptions and structured data</li>
           <li>${ICONS.check}Pages in two languages, linked so Google shows the right one</li>
           <li>${ICONS.check}Interactive tools: a Nepali keyboard, a date converter and an age calculator</li>
           <li>${ICONS.check}No hosting bill: it runs on free, fast hosting</li>
