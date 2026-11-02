@@ -1,0 +1,16 @@
+{
+  "name": "hamropedia-digital",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hamropedia Digital: simple, fixed-price websites for small businesses in the UK and Nepal.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && node serve.mjs",
+    "serve": "node serve.mjs",
+    "verify": "node scripts/verify-site.mjs"
+  }
+}
