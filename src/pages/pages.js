@@ -275,7 +275,7 @@ export function renderExamples(version) {
       <div>
         <p class="eyebrow">Real project</p>
         <h2>Hamropedia.com</h2>
-        <p>My own website, with guides, news in English and Nepali, and free tools used in the browser. I moved it from WordPress to a fast, hand-built website, and kept every old link working so it did not lose its place on Google.</p>
+        <p>My own website, with guides, news in English and Nepali, and free tools used in the browser. I moved it from WordPress to a fast, hand-built website, and kept every old address working, so existing Google links and bookmarks still reach the right page.</p>
         <ul class="ticks">
           <li>${ICONS.check}Moved from WordPress, with every old address still working</li>
           <li>${ICONS.check}Pages in two languages, linked so Google shows the right one</li>
@@ -357,6 +357,14 @@ export function renderContact(version) {
     <p class="form-error" id="cf-error" role="alert" hidden>Please fill in every box, so I can reply properly.</p>
     <button class="btn btn-lg" type="submit">${ICONS.mail} Send by email</button>
     <p class="muted small">This opens your email app with your message ready to send to ${esc(site.email)}. Nothing is stored on this website. See the <a href="/privacy/">privacy policy</a>.</p>
+    <div class="cf-fallback" id="cf-fallback" hidden>
+      <h2>Email app did not open?</h2>
+      <p>No problem. Copy your message below and send it to <a href="${mailLink()}">${esc(site.email)}</a> from any email, or paste it into a WhatsApp or text message.</p>
+      <label class="sr-only" for="cf-copy-text">Your message</label>
+      <textarea id="cf-copy-text" rows="7" readonly></textarea>
+      <div class="btn-row"><button class="btn" type="button" id="cf-copy">Copy my message</button><a class="btn btn-ghost" id="cf-reopen" href="${mailLink()}">Try the email app again</a></div>
+      <p class="cf-copied" id="cf-copied" role="status"></p>
+    </div>
   </form>
   <aside class="contact-side">
     <div class="side-card">

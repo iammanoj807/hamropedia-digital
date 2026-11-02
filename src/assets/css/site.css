@@ -363,3 +363,10 @@ p { margin: 0 0 1em; }
   .cost-table td + td { margin-top: .45rem; font-weight: 700; color: var(--text); }
 }
 .section.narrow > h2:not(:first-child) { margin-top: 2.4rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.cf-fallback { padding: 1.2rem; border-radius: 14px; border: 2px dashed var(--accent); background: var(--accent-soft); }
+.cf-fallback h2 { font-size: 1.2rem; margin-bottom: .3rem; }
+.cf-fallback p { color: var(--text-2); }
+.cf-fallback textarea { width: 100%; margin-bottom: .8rem; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid var(--border-2); background: var(--bg); color: var(--text); font: .95rem/1.5 var(--font-body); resize: vertical; }
+.cf-copied { margin: .6rem 0 0; font-weight: 700; color: var(--ok); }
+.cf-copied:empty { display: none; }

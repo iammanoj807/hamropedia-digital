@@ -53,7 +53,7 @@ export function renderNepal(version) {
 <section class="wrap section narrow">
   <h2>पछि लाग्ने खर्च</h2>
   <ul class="ticks">
-    <li>${ICONS.check}<span><strong>वेब ठेगाना (डोमेन):</strong> तपाईंकै नाममा दर्ता हुन्छ। दर्ता भएका व्यवसायका लागि आधिकारिक रजिस्ट्री (<a href="https://register.com.np/" rel="noopener">register.com.np</a>) बाट .com.np ठेगाना निःशुल्क पाइन्छ। .com ठेगानाका लागि सानो वार्षिक शुल्क लाग्छ।</span></li>
+    <li>${ICONS.check}<span><strong>वेब ठेगाना (डोमेन):</strong> तपाईंकै नाममा दर्ता हुन्छ। दर्ता भएका व्यवसायका लागि आधिकारिक रजिस्ट्री (<a href="https://register.com.np/" rel="noopener">register.com.np</a>) बाट .com.np ठेगाना हाल निःशुल्क पाइन्छ (नियम बदलिन सक्छ)। .com ठेगानाका लागि सानो वार्षिक शुल्क लाग्छ।</span></li>
     <li>${ICONS.check}<span><strong>होस्टिङ:</strong> यस्तो साधारण वेबसाइटका लागि प्रायः निःशुल्क। शुल्क लाग्ने भए पहिले नै भनिन्छ।</span></li>
     <li>${ICONS.check}<span><strong>केयर प्लान:</strong> ऐच्छिक, जुनसुकै बेला रोक्न सकिन्छ।</span></li>
   </ul>

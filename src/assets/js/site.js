@@ -89,7 +89,21 @@ if (form) {
     const ok = ['name', 'business', 'message', 'reply'].every((n) => v(n));
     document.getElementById('cf-error').hidden = ok;
     if (!ok) { form.querySelector(':invalid, input:placeholder-shown')?.focus(); return; }
+    const subject = `Website enquiry: ${v('business')}`;
     const body = `Name: ${v('name')}\nBusiness: ${v('business')}\nI need: ${v('need')}\nReply to: ${v('reply')}\n\n${v('message')}`;
-    location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent(`Website enquiry: ${v('business')}`)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // Some visitors (e.g. Gmail in a browser) have no email app, so also show the message to copy.
+    const fallback = document.getElementById('cf-fallback');
+    document.getElementById('cf-copy-text').value = `To: ${form.dataset.email}\nSubject: ${subject}\n\n${body}`;
+    document.getElementById('cf-reopen').href = mailto;
+    fallback.hidden = false;
+    location.href = mailto;
+    setTimeout(() => fallback.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 300);
+  });
+  document.getElementById('cf-copy')?.addEventListener('click', async () => {
+    const text = document.getElementById('cf-copy-text');
+    const done = document.getElementById('cf-copied');
+    try { await navigator.clipboard.writeText(text.value); done.textContent = 'Copied. Now paste it into an email or message.'; }
+    catch { text.select(); done.textContent = 'Select the text above and copy it.'; }
   });
 }
