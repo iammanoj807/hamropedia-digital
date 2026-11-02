@@ -4,7 +4,6 @@ export const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const abs = (p) => (p.startsWith('http') ? p : site.url + p);
 export const gbp = (n) => `£${n.toLocaleString('en-GB')}`;
-export const npr = (n) => `रु ${n.toLocaleString('en-IN')}`;
 export const waLink = (text = '') =>
   site.whatsapp ? `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ''}` : '';
 export const mailLink = (subject = 'Website enquiry') => `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;
@@ -93,7 +92,7 @@ ${p.noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" 
 <meta property="og:image" content="${image}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="${lang === 'ne' ? 'ne_NP' : 'en_GB'}">
+<meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2453c4">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -125,7 +124,7 @@ ${p.body}
   <div class="wrap footer-grid">
     <div class="footer-about">
       <a class="logo" href="/">${ICONS.logo}<span class="logo-text">Hamropedia <b>Digital</b></span></a>
-      <p>Websites and AI for small businesses across the UK and in Nepal, explained in plain English. Run by ${esc(site.owner)}, an AI software engineer in Birmingham.</p>
+      <p>Websites and AI for small businesses across the UK, explained in plain English. Run by ${esc(site.owner)}, an AI software engineer in Birmingham.</p>
       <p><a href="${mailLink()}">${esc(site.email)}</a></p>
     </div>
     <div>
@@ -144,7 +143,6 @@ ${p.body}
         <li><a href="/questions/">Questions &amp; plain-English words</a></li>
         <li><a href="/contact/">Get a free quote</a></li>
         <li><a href="/about/">About me</a></li>
-        <li><a href="/nepal/" lang="ne">नेपालका व्यवसायका लागि</a></li>
       </ul>
     </div>
     <div>

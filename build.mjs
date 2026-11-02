@@ -9,7 +9,6 @@ import {
   renderServices, renderPrices, renderHow, renderQuestions, renderExamples,
   renderAbout, renderContact, renderPrivacy, renderTerms, render404,
 } from './src/pages/pages.js';
-import { renderNepal } from './src/pages/nepal.js';
 import { renderMomo } from './src/demos/momo.js';
 import { renderBarber } from './src/demos/barber.js';
 import { renderAiDemo } from './src/demos/ai.js';
@@ -53,7 +52,6 @@ add('/how-it-works/', renderHow(version));
 add('/questions/', renderQuestions(version));
 add('/about/', renderAbout(version));
 add('/contact/', renderContact(version));
-add('/nepal/', renderNepal(version));
 add('/privacy/', renderPrivacy(version));
 add('/terms/', renderTerms(version));
 add('/404.html', render404(version), { index: false });

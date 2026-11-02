@@ -103,7 +103,7 @@ export function renderPrices(version) {
     lead: `You know the full price before anything starts. These are launch prices while I take on my first clients: ${esc(marketPrice.text.charAt(0).toLowerCase() + marketPrice.text.slice(1))}`,
   })}
 <section class="wrap section">
-  <p class="source-note">Typical prices: <a href="${marketPrice.url}" rel="noopener">${esc(marketPrice.source)}</a>. Prices for businesses in Nepal are on the <a href="/nepal/" lang="ne">नेपाल पेज</a>.</p>
+  <p class="source-note">Typical prices: <a href="${marketPrice.url}" rel="noopener">${esc(marketPrice.source)}</a>.</p>
   ${priceCards()}
 </section>
 
@@ -324,7 +324,7 @@ export function renderAbout(version) {
   <h2>How I work</h2>
   <ul class="ticks">
     <li>${ICONS.check}You deal with me directly, from the first chat to launch and after.</li>
-    <li>${ICONS.check}I work with businesses anywhere in the UK, and in Nepal. Start with an email; after that we can talk by phone, video call or email, whichever suits you.</li>
+    <li>${ICONS.check}I work with businesses anywhere in the UK. Start with an email; after that we can talk by phone, video call or email, whichever suits you.</li>
     <li>${ICONS.check}I speak English and Nepali.</li>
     <li>${ICONS.check}One fixed price, agreed before any work starts.</li>
   </ul>
@@ -334,7 +334,7 @@ ${ctaBand()}`;
   return layout({
     title: `About ${site.owner} | ${site.name}`,
     ogTitle: `About ${site.owner}, Hamropedia Digital`,
-    description: `${site.owner} is an AI software engineer in Birmingham who builds fixed-price websites and AI assistants for small businesses across the UK and in Nepal.`,
+    description: `${site.owner} is an AI software engineer in Birmingham who builds fixed-price websites and AI assistants for small businesses across the UK.`,
     path: '/about/', section: '/about/', body, version,
     schema: [
       breadcrumbSchema([{ name: 'About me', path: '/about/' }]),

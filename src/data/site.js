@@ -28,20 +28,15 @@ export const nav = [
 ];
 
 // ---------- Website prices ----------
-// gbp = UK price in pounds, npr = Nepal price in rupees. `from: true` shows "from £…".
+// gbp = price in pounds. `from: true` shows "from £…".
 export const packages = [
   {
     id: 'starter',
     name: 'Starter',
-    nameNe: 'स्टार्टर',
     what: 'A one-page website',
-    whatNe: 'एक पेजको वेबसाइट',
     gbp: 249,
-    npr: 10000,
     time: 'Ready in about 1 week',
-    timeNe: 'करिब १ हप्तामा तयार',
     best: 'For businesses that simply need to be found and contacted.',
-    bestNe: 'अनलाइन भेटिन र ग्राहकले सम्पर्क गर्न मात्र चाहिने व्यवसायका लागि।',
     includes: [
       'One page with everything a customer needs: what you do, prices, opening hours and where you are',
       'Buttons to call you, message you and get directions in one tap',
@@ -50,28 +45,15 @@ export const packages = [
       'Set up so Google can find and show it',
       'Your own web address (like yourbusiness.co.uk) set up in your name',
     ],
-    includesNe: [
-      'एउटै पेजमा ग्राहकलाई चाहिने सबै: तपाईं के गर्नुहुन्छ, मूल्य, खुल्ने समय र ठेगाना',
-      'एक थिचाइमै फोन गर्ने, म्यासेज पठाउने र नक्सामा बाटो हेर्ने बटन',
-      'मोबाइल, ट्याबलेट र कम्प्युटर सबैमा राम्रो देखिने',
-      'तपाईंको इमेलमा सन्देश आउने सम्पर्क फारम',
-      'गुगलले भेट्टाउने र देखाउने गरी तयार',
-      'तपाईंकै नाममा आफ्नै वेब ठेगाना (जस्तै yourbusiness.com.np)',
-    ],
   },
   {
     id: 'business',
     name: 'Business',
-    nameNe: 'बिजनेस',
     what: 'A full website, up to 5 pages',
-    whatNe: '५ पेजसम्मको पूरा वेबसाइट',
     gbp: 499,
-    npr: 20000,
     featured: true,
     time: 'Ready in about 2 weeks',
-    timeNe: 'करिब २ हप्तामा तयार',
     best: 'For businesses that want to look professional and win more customers from Google.',
-    bestNe: 'व्यावसायिक देखिन र गुगलबाट धेरै ग्राहक पाउन चाहने व्यवसायका लागि।',
     includes: [
       'Everything in Starter',
       'Up to 5 pages, for example Home, Services, Prices, About and Contact',
@@ -80,28 +62,15 @@ export const packages = [
       'Your Google Business Profile set up or tidied, so you appear on Google Maps',
       'A short video or call showing you how everything works',
     ],
-    includesNe: [
-      'स्टार्टरमा भएका सबै',
-      '५ पेजसम्म, जस्तै होम, सेवा, मूल्य, हाम्रोबारे र सम्पर्क',
-      'तपाईंकै फोटो, लोगो र रङ, जसले तपाईंको व्यवसायजस्तै देखाउँछ',
-      'गुगल खोजमा देखिने गरी लेखिएका र तयार पारिएका पेज',
-      'गुगल म्यापमा देखिन गुगल बिजनेस प्रोफाइल बनाइदिने वा मिलाइदिने',
-      'सबै कुरा कसरी चल्छ भनेर देखाउने छोटो भिडियो वा कल',
-    ],
   },
   {
     id: 'bookings',
     name: 'Bookings & orders',
-    nameNe: 'बुकिङ र अर्डर',
     what: 'Let customers book or order online',
-    whatNe: 'अनलाइन बुकिङ वा अर्डर',
     gbp: 799,
-    npr: 35000,
     from: true,
     time: 'Ready in about 3 to 4 weeks',
-    timeNe: 'करिब ३ देखि ४ हप्तामा तयार',
     best: 'For salons, takeaways, trades and shops that want bookings or orders without phone calls.',
-    bestNe: 'फोन बिना नै बुकिङ वा अर्डर लिन चाहने सैलुन, रेस्टुरेन्ट, पसल र सेवा व्यवसायका लागि।',
     includes: [
       'Everything in Business',
       'Online booking, an order form or a small online shop, whichever fits your business',
@@ -109,31 +78,17 @@ export const packages = [
       'Booking or order alerts sent straight to your phone or email',
       'I explain the options and any monthly fees from booking or payment companies before we start',
     ],
-    includesNe: [
-      'बिजनेस प्याकेजमा भएका सबै',
-      'अनलाइन बुकिङ, अर्डर फारम वा सानो अनलाइन पसल, जुन तपाईंको व्यवसायलाई मिल्छ',
-      'चाहनुभयो भने इसेवा, खल्ती वा बैंक क्युआर (QR) बाट भुक्तानी',
-      'बुकिङ वा अर्डर आउनासाथ तपाईंको फोन वा इमेलमा सूचना',
-      'सुरु गर्नुअघि नै सबै विकल्प र मासिक शुल्क (यदि छ भने) बुझाइदिने',
-    ],
   },
 ];
 
 export const care = {
   name: 'Care plan',
   gbp: 19,
-  npr: 1200,
   includes: [
     'Small changes whenever you need them: new prices, photos, opening hours or offers (up to 1 hour of changes a month)',
     'I check every month that your website is working, fast and safe',
     'Help with your Google Business Profile and replying to reviews',
     'No contract: stop any time with one message',
-  ],
-  includesNe: [
-    'चाहिएको बेला साना परिवर्तन: नयाँ मूल्य, फोटो, खुल्ने समय वा अफर (महिनामा १ घण्टासम्म)',
-    'वेबसाइट चलिरहेको, छिटो र सुरक्षित छ भनी हरेक महिना जाँच',
-    'गुगल बिजनेस प्रोफाइल र रिभ्युको जवाफ दिन सहयोग',
-    'कुनै सम्झौता छैन: एउटा म्यासेज पठाएर जुनसुकै बेला रोक्न सकिन्छ',
   ],
 };
 
@@ -141,44 +96,34 @@ export const extras = [
   {
     id: 'google',
     name: 'Get found on Google',
-    nameNe: 'गुगलमा देखिने व्यवस्था',
     gbp: 59,
-    npr: 2500,
     text: 'I set up or fix your free Google Business Profile, so you show up on Google Maps with your hours, photos, phone number and reviews. No website needed.',
-    textNe: 'तपाईंको निःशुल्क गुगल बिजनेस प्रोफाइल बनाइदिने वा मिलाइदिने, जसले गुगल म्यापमा तपाईंको खुल्ने समय, फोटो, फोन नम्बर र रिभ्यु देखाउँछ। वेबसाइट नभए पनि हुन्छ।',
   },
   {
     id: 'refresh',
     name: 'Fix or refresh an old website',
-    nameNe: 'पुरानो वेबसाइट मिलाउने',
     gbp: 149,
-    npr: 6000,
     from: true,
     text: 'Your website is slow, looks broken on phones or shows old information. I fix it, or move it to something faster and cheaper to run.',
-    textNe: 'पुरानो वेबसाइट ढिलो छ, मोबाइलमा बिग्रिएको देखिन्छ वा पुरानो जानकारी देखाउँछ भने त्यसलाई मिलाइदिने वा छिटो र सस्तो प्रणालीमा सारिदिने।',
   },
   {
     id: 'tools',
     name: 'Custom tools for your business',
-    nameNe: 'व्यवसायका लागि विशेष टुल',
     quote: true,
     text: 'Price calculators, quote forms, simple staff tools, or turning a messy spreadsheet into an easy app. Tell me the problem and I will give you a fixed price.',
-    textNe: 'मूल्य गणना गर्ने टुल, कोटेसन फारम, कर्मचारीका लागि साना टुल, वा अलमलिने स्प्रेडसिटलाई सजिलो एपमा बदल्ने। समस्या भन्नुहोस्, म निश्चित मूल्य दिन्छु।',
   },
 ];
 
 // ---------- AI & automation ----------
-// gbp/npr = one-off set-up price. monthly/monthlyNpr = monthly fee (0 = none).
+// gbp = one-off set-up price. monthly = monthly fee (0 = none).
 export const aiServices = [
   {
     id: 'assistant',
     icon: 'chat',
     name: 'AI assistant for your website',
-    nameNe: 'वेबसाइटका लागि एआई सहायक',
     what: 'Answers customer questions day and night, from your own prices, opening hours and services, and takes enquiries or booking requests while you work.',
-    whatNe: 'तपाईंकै मूल्य, खुल्ने समय र सेवाका आधारमा दिनरात ग्राहकका प्रश्नको जवाफ दिन्छ, र तपाईं काम गरिरहँदा सोधपुछ वा बुकिङ अनुरोध लिन्छ।',
     example: 'A customer asks at 11pm "how much is a 3-bed end-of-tenancy clean?" and gets the price and a booking request form straight away.',
-    gbp: 349, npr: 20000, monthly: 20, monthlyNpr: 1500, from: true,
+    gbp: 349, monthly: 20, from: true,
     includes: [
       'Set up with your own information: prices, services, hours, areas and common questions',
       'Passes anything it is not sure about to you, instead of guessing',
@@ -190,11 +135,9 @@ export const aiServices = [
     id: 'whatsapp',
     icon: 'whatsapp',
     name: 'WhatsApp assistant',
-    nameNe: 'ह्वाट्सएप सहायक',
     what: 'The same assistant inside WhatsApp, where many customers already message small businesses. It replies straight away and sends you the conversations that need you.',
-    whatNe: 'त्यही सहायक ह्वाट्सएपभित्र, जहाँ धेरै ग्राहक पहिलेदेखि नै साना व्यवसायलाई म्यासेज गर्छन्। तुरुन्त जवाफ दिन्छ, र तपाईं चाहिने कुराकानी तपाईंलाई पठाउँछ।',
     example: 'A customer messages "are you open Sunday?" while you are busy with someone else, and gets the answer in seconds.',
-    gbp: 449, npr: 25000, monthly: 25, monthlyNpr: 2000, from: true,
+    gbp: 449, monthly: 25, from: true,
     includes: [
       'Works on a WhatsApp number for your business (I check the best set-up for your number first)',
       'Instant answers to common questions, any time',
@@ -206,11 +149,9 @@ export const aiServices = [
     id: 'automation',
     icon: 'bolt',
     name: 'Admin automation',
-    nameNe: 'प्रशासनिक काम स्वचालित',
     what: 'Hands repetitive admin to software: enquiries into one tidy list, instant replies, appointment reminders, invoices and receipts read into a spreadsheet, and draft replies to reviews.',
-    whatNe: 'दोहोरिने काम सफ्टवेयरलाई: सबै सोधपुछ एउटै सूचीमा, तुरुन्त जवाफ, अपोइन्टमेन्ट रिमाइन्डर, बिल र रसिद स्प्रेडसिटमा, र रिभ्युको जवाफको ड्राफ्ट।',
     example: 'Every enquiry from your website and email lands in one spreadsheet, and the customer gets a friendly reply within a minute.',
-    gbp: 199, npr: 8000, monthly: 0, monthlyNpr: 0, from: true,
+    gbp: 199, monthly: 0, from: true,
     includes: [
       'Priced per automation, so you start with the one that saves you most time',
       'Works with tools you already use, like Gmail, Outlook, Google Sheets or Excel',
@@ -222,11 +163,9 @@ export const aiServices = [
     id: 'documents',
     icon: 'search',
     name: 'Ask-your-documents assistant',
-    nameNe: 'आफ्नै कागजातबाट जवाफ दिने सहायक',
     what: 'You and your staff ask questions in plain words and get answers only from your own documents, such as manuals, policies, price lists or past quotes.',
-    whatNe: 'तपाईं र कर्मचारीले सजिलो भाषामा प्रश्न सोध्नुहुन्छ, र जवाफ तपाईंकै कागजात (म्यानुअल, नीति, मूल्यसूची) बाट मात्र आउँछ।',
     example: 'A new member of staff asks "what is our refund policy for deposits?" and gets the answer from your own policy document.',
-    gbp: 499, npr: 25000, monthly: 20, monthlyNpr: 1500, from: true,
+    gbp: 499, monthly: 20, from: true,
     includes: [
       'Answers only from your documents, and shows where each answer came from',
       'Reads scanned PDFs as well as normal files',
@@ -343,7 +282,7 @@ export const faqs = [
   },
   {
     q: 'Do you only work in Birmingham?',
-    a: 'No. I work with businesses anywhere in the UK, by video call, phone or email. I also build websites and AI tools for businesses in Nepal, with prices in rupees.',
+    a: 'No. I work with businesses anywhere in the UK, by video call, phone or email.',
   },
   {
     q: 'I only have a Facebook or Instagram page. Is that enough?',

@@ -240,7 +240,7 @@ ${ctaBand('Ready to grow your business?', 'Tell me how your business works. I wi
         image: site.url + '/images/og.jpg',
         description: site.description,
         email: site.email,
-        areaServed: [{ '@type': 'Country', name: 'United Kingdom' }, { '@type': 'Country', name: 'Nepal' }],
+        areaServed: { '@type': 'Country', name: 'United Kingdom' },
         founder: { '@type': 'Person', name: site.owner, jobTitle: 'AI Software Engineer', sameAs: Object.values(site.social) },
         priceRange: `£${lowestPrice}–£${packages[2].gbp}+`,
         knowsAbout: ['Small business websites', 'Local SEO', 'AI assistants', 'Business automation'],
