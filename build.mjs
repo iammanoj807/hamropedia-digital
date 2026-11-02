@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { site } from './src/data/site.js';
 import { renderHome } from './src/pages/home.js';
@@ -60,7 +61,8 @@ add('/examples/momo-kitchen/', renderMomo(), { index: false });
 add('/examples/barber/', renderBarber(), { index: false });
 add('/examples/ai-assistant/', renderAiDemo(), { index: false });
 
-const today = new Date().toISOString().slice(0, 10);
+let today = new Date().toISOString().slice(0, 10);
+try { today = execSync('git log -1 --format=%cs', { cwd: ROOT }).toString().trim() || today; } catch { /* not a git checkout */ }
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map((p) => `  <url><loc>${site.url}${p}</loc><lastmod>${today}</lastmod></url>`).join('\n')}

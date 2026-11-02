@@ -223,7 +223,7 @@ ${ctaBand('Start with a free chat', 'No preparation and no obligation. Tell me a
   return layout({
     title: `How it works: from free chat to live website | ${site.name}`,
     ogTitle: 'How it works: from a free chat to a live website',
-    description: 'Exactly what happens when you get a website from Hamropedia Digital: a free chat, a fixed price, you check everything, then you go live. Plus a checklist of what to send.',
+    description: 'Exactly what happens: a free chat, one fixed price, you check everything, then your website goes live. Plus a simple checklist of what to send.',
     path: '/how-it-works/', section: '/how-it-works/', body, version,
     schema: [
       breadcrumbSchema([{ name: 'How it works', path: '/how-it-works/' }]),
@@ -303,7 +303,7 @@ ${ctaBand('Want one like these for your business?', 'Tell me which example is cl
   return layout({
     title: `Example websites and real AI projects | ${site.name}`,
     ogTitle: 'Example websites and real AI projects you can try',
-    description: 'Try an AI assistant for a cleaning company, a takeaway website and barber booking, plus real AI projects with live demos: Planck AI, CogniGraph, NeuroArc and FruitGuard AI.',
+    description: 'Try an AI assistant for a cleaning company, a takeaway website and barber booking, plus real AI projects with live demos you can open in your browser.',
     path: '/examples/', section: '/examples/', body, version,
     schema: [breadcrumbSchema([{ name: 'Examples', path: '/examples/' }])],
   });
@@ -401,7 +401,7 @@ export function renderContact(version) {
   return layout({
     title: `Get a free quote | ${site.name}`,
     ogTitle: 'Get a free website quote',
-    description: 'Tell me about your business and get a fixed-price quote for a website or AI assistant, free and with no obligation. I reply in plain English, usually within one working day.',
+    description: 'Tell me about your business and get a fixed-price quote for a website or AI assistant, free and with no obligation. I usually reply within one working day.',
     path: '/contact/', section: '/contact/', body, version,
     schema: [breadcrumbSchema([{ name: 'Free quote', path: '/contact/' }])],
   });

@@ -69,6 +69,9 @@ export function layout(p) {
   const url = abs(p.path);
   const image = abs('/images/og.jpg');
   const lang = p.lang || 'en';
+  // Google shows the site name above each result and cuts long titles, so very long titles drop the brand.
+  const brand = ` | ${site.name}`;
+  const pageTitle = p.title.length > 70 && p.title.endsWith(brand) ? p.title.slice(0, -brand.length) : p.title;
   const schema = (p.schema || [])
     .map((s) => `<script type="application/ld+json">${JSON.stringify(s).replace(/</g, '\\u003c')}</script>`)
     .join('\n');
@@ -81,7 +84,7 @@ export function layout(p) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(p.title)}</title>
+<title>${esc(pageTitle)}</title>
 <meta name="description" content="${esc(p.description)}">
 ${p.noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${url}">`}
 <meta property="og:type" content="website">
@@ -92,11 +95,14 @@ ${p.noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" 
 <meta property="og:image" content="${image}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(site.name)}: websites and AI for small businesses">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${image}">
 <meta name="theme-color" content="#2453c4">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>${THEME_BOOT}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">

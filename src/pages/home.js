@@ -225,19 +225,21 @@ export function renderHome(version) {
 ${ctaBand('Ready to grow your business?', 'Tell me how your business works. I will reply with ideas, one fixed price and a simple plan, free and with no obligation.')}`;
 
   return layout({
-    title: `${site.name}: websites and AI for small businesses in the UK`,
+    title: `Small Business Websites and AI in the UK | ${site.name}`,
     ogTitle: 'More customers, less admin, without the jargon',
     description: site.description,
     path: '/',
     body,
     version,
     schema: [
+      { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, alternateName: 'digital.hamropedia.com', url: site.url + '/' },
       {
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
         name: site.name,
         url: site.url + '/',
         image: site.url + '/images/og.jpg',
+        logo: site.url + '/icon-512.png',
         description: site.description,
         email: site.email,
         areaServed: { '@type': 'Country', name: 'United Kingdom' },
