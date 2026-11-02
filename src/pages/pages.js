@@ -314,7 +314,7 @@ export function renderAbout(version) {
   const crumbs = [{ name: 'About me' }];
   const body = `${pageHead({ crumbs, eyebrow: 'About', title: 'Hi, I am Manoj' })}
 <section class="wrap section narrow about">
-  <figure class="about-photo"><img src="/images/manojkumarthapa.webp" alt="${esc(site.owner)}" width="440" height="519"></figure>
+  <figure class="about-photo"><img src="/images/manojkumarthapa.webp" alt="${esc(site.owner)}" width="440" height="519"><figcaption>${esc(site.owner)}<span>AI Software Engineer, Birmingham, United Kingdom</span></figcaption></figure>
   <p class="lead">I am ${esc(site.owner)}, an AI software engineer living in Birmingham, originally from Nepal. I started Hamropedia Digital to help small businesses get online and use AI properly: at a fair price, explained in plain English, and without being tied into contracts.</p>
   <p>I have an MSc in Artificial Intelligence (Distinction) from Aston University, and before that I was a software engineer at Accenture. I build AI assistants and tools, like <a href="/examples/#real">Planck AI and CogniGraph</a>, and I build and run <a href="https://hamropedia.com/">hamropedia.com</a>, a website with guides, news in English and Nepali, and free tools.</p>
   <h2>Why small businesses?</h2>

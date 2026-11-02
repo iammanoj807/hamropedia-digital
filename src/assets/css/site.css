@@ -244,10 +244,12 @@ p { margin: 0 0 1em; }
 /* ---------- promise / about ---------- */
 .promise { display: grid; gap: 2rem; align-items: center; padding: clamp(1.4rem, 1rem + 2vw, 2.5rem); border-radius: 24px; border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow); }
 @media (min-width: 820px) { .promise { grid-template-columns: 240px 1fr; } }
-.promise-me img { display: block; width: 220px; margin-inline: auto; border-radius: 22px; background: linear-gradient(160deg, var(--accent-soft), var(--bg-2)); }
+.promise-me img { display: block; width: 220px; height: auto; margin-inline: auto; border-radius: 22px; background: none; }
 .about .about-photo { float: left; width: 210px; margin: .3rem 1.6rem 1rem 0; }
-.about .about-photo img { display: block; width: 100%; border-radius: 22px; background: linear-gradient(160deg, var(--accent-soft), var(--bg-2)); }
+.about .about-photo img { display: block; width: 100%; height: auto; border-radius: 22px; background: none; }
 .about ul { display: flow-root; }
+.about .about-photo figcaption { margin-top: .6rem; text-align: center; font-weight: 700; color: var(--text); line-height: 1.35; }
+.about .about-photo figcaption span { display: block; font-weight: 400; font-size: .9rem; color: var(--muted); }
 @media (max-width: 560px) { .about .about-photo { float: none; width: 180px; margin: 0 auto 1.2rem; } }
 .about-links { clear: both; display: flex; flex-wrap: wrap; gap: .6rem; padding-top: .5rem; }
 
