@@ -99,11 +99,12 @@ p { margin: 0 0 1em; }
 .main-nav .nav-cta { margin-left: .4rem; background: var(--accent); color: var(--accent-ink); padding-inline: 1rem; }
 .main-nav .nav-cta:hover, .main-nav .nav-cta[aria-current='page'] { background: var(--accent-2); color: var(--accent-ink); }
 .header-tools { display: flex; gap: .3rem; }
-.icon-btn { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); cursor: pointer; }
-.icon-btn:hover { color: var(--accent); border-color: var(--border-2); }
-.icon-btn svg { width: 21px; height: 21px; }
-.i-sun, .i-close { display: none; }
-[data-theme='dark'] .i-sun { display: inline; } [data-theme='dark'] .i-moon { display: none; }
+.icon-btn { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 999px; border: 1px solid transparent; background: none; color: var(--text-2); cursor: pointer; }
+.icon-btn:hover { background: var(--surface-2); color: var(--text); }
+.icon-btn svg { width: 22px; height: 22px; }
+/* Same as hamropedia.com: a sun in light mode, a moon in dark mode. */
+.i-moon, .i-close { display: none; }
+[data-theme='dark'] .i-moon { display: inline; } [data-theme='dark'] .i-sun { display: none; }
 .menu-open .i-close { display: inline; } .menu-open .i-menu { display: none; }
 .menu-btn { display: none; }
 @media (max-width: 960px) {
