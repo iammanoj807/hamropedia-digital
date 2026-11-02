@@ -444,6 +444,9 @@ export function renderTerms(version) {
   <p>You confirm that you have the right to use the words, photos and logos you send me. I can help you find photos you are allowed to use.</p>
   <h2>Ownership</h2>
   <p>Once the website is paid for, it is yours. Your domain is registered in your name. If you want to move on, I hand over the website files and all logins at no extra cost. I may show your finished website as an example of my work, unless you ask me not to.</p>
+  <h2>AI assistants and automation</h2>
+  <p>AI services have a one-off set-up price and, where shown, a monthly fee. The monthly fee is paid each month, covers the AI running costs for typical small-business use, and can be stopped at any time. If your use is likely to be much heavier, I quote that before we start.</p>
+  <p>Before an assistant goes live, you check its answers. You are responsible for the business information it is given, such as prices, opening hours and policies, so please tell me when anything changes. AI can make mistakes: assistants are set up to answer only from your information and to pass anything they are not sure about to you. They rely on outside AI providers, whose own terms also apply. If an assistant handles your customers' personal information, we agree in writing how that information is handled, as UK data protection law requires.</p>
   <h2>Third-party services</h2>
   <p>Some features use other companies, such as domain companies, booking systems and payment companies. They have their own terms and fees, which I explain before you choose them.</p>
   <h2>Example websites</h2>

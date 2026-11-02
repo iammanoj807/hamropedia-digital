@@ -196,7 +196,7 @@ export const aiServices = [
     example: 'A customer messages "are you open Sunday?" while you are busy with someone else, and gets the answer in seconds.',
     gbp: 449, npr: 25000, monthly: 25, monthlyNpr: 2000, from: true,
     includes: [
-      'Works on your business WhatsApp number',
+      'Works on a WhatsApp number for your business (I check the best set-up for your number first)',
       'Instant answers to common questions, any time',
       'Hands the chat to you when a person is needed',
       'Monthly fee covers typical small-business use; very busy accounts get a quote first',

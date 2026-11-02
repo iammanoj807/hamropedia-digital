@@ -115,8 +115,16 @@ footer{padding:2rem 0;color:var(--ink2);font-size:.9rem;border-top:1px solid var
   function findDay(s){ for (var i = 0; i < DAYS.length; i++) if (s.indexOf(DAYS[i]) > -1) return DAYS[i].charAt(0).toUpperCase() + DAYS[i].slice(1); return null; }
   function beds(s){ var m = s.match(/(\\d)\\s*-?\\s*(bed|bedroom|br)/); if (m) return +m[1]; var w = {one:1,two:2,three:3,four:4}; for (var k in w) if (s.indexOf(k + ' bed') > -1 || s.indexOf(k + '-bed') > -1) return w[k]; return null; }
 
-  function answer(raw){
+  // A real question (or a tapped suggestion) during the booking steps cancels the booking.
+  function looksLikeQuestion(s){
+    return s.indexOf('?') > -1 || /(price|cost|how much|quote|cover|area|postcode|product|supplies|include|what's in|whats in|end of tenancy|deep clean|regular clean)/.test(s);
+  }
+  function answer(raw, fromChip){
     var s = raw.toLowerCase();
+    if (flow && (fromChip || ((flow === 'name' || flow === 'phone') && looksLikeQuestion(s)))) {
+      flow = null; lead = {};
+      say('bot', 'No problem, we can book later.');
+    }
     // Booking flow: name -> phone -> day.
     if (flow === 'name') { lead.name = raw.trim().slice(0, 40); flow = 'phone'; bot('Thanks, ' + lead.name + '! What is the best phone number for Sam to confirm the booking?'); return; }
     if (flow === 'phone') {
@@ -128,7 +136,7 @@ footer{padding:2rem 0;color:var(--ink2);font-size:.9rem;border-top:1px solid var
     if (flow === 'day') { lead.day = findDay(s) || raw.trim().slice(0, 30); flow = null; return finish(); }
 
     if (/^(hi|hello|hey|hiya|good (morning|afternoon|evening))\\b/.test(s)) { count('answered'); bot('Hello! How can I help? You can ask about prices, the areas we cover, or booking a clean.'); event('ok', '✓', 'Greeted a new visitor'); return; }
-    if (/(book|available|availability|come|appointment|slot|free on|can you do)/.test(s) && !/car|oven only/.test(s)) {
+    if (/(book|available|availability|come|appointment|slot|free on|can you do)/.test(s) && !/\\bcar\\b|oven only/.test(s)) {
       lead = { day: findDay(s) }; flow = 'name'; count('answered');
       bot((lead.day ? lead.day + ' should be possible. ' : '') + 'I can send a booking request to Sam now. What is your name?');
       event('ok', '✓', 'Started a booking request' + (lead.day ? ' for ' + lead.day : '')); return;
@@ -165,9 +173,9 @@ footer{padding:2rem 0;color:var(--ink2);font-size:.9rem;border-top:1px solid var
     setTimeout(function(){ event('ok', '🔔', 'Alert sent to ' + OWNER + "'s phone: new booking request"); }, 900);
     setTimeout(function(){ event('ok', '⏰', 'Reminder set: text ' + lead.name + ' the day before'); }, 1300);
   }
-  function ask(text){ text = (text || '').trim(); if (!text) return; say('me', text); answer(text); }
+  function ask(text, fromChip){ text = (text || '').trim(); if (!text) return; say('me', text); answer(text, fromChip); }
   document.getElementById('send').addEventListener('submit', function(e){ e.preventDefault(); var q = document.getElementById('q'); ask(q.value); q.value = ''; q.focus(); });
-  document.getElementById('chips').addEventListener('click', function(e){ var c = e.target.closest('.chip'); if (c) ask(c.textContent); });
+  document.getElementById('chips').addEventListener('click', function(e){ var c = e.target.closest('.chip'); if (c) ask(c.textContent, true); });
   say('bot', 'Hi! I am the Bright Nest assistant. Ask me about prices, the areas we cover, or booking a clean.');
   say('note', 'Example only: this assistant uses pre-written answers. A real AI assistant understands any wording, and still answers only from the business\\'s own information. Try a question it cannot answer, too.');
 })();`;

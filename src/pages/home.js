@@ -130,7 +130,7 @@ export function renderHome(version) {
   </div>
   <div class="stat-row">
     ${statBox(stats.offline, 'When customers search on their phone, a business with no website is easy to miss.')}
-    ${statBox(stats.ai, 'Small businesses are being left behind, often because nobody has shown them what AI could actually do.')}
+    ${statBox(stats.ai, 'The smallest businesses are falling behind bigger ones.')}
   </div>
 </section>
 
