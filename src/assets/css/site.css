@@ -147,7 +147,7 @@ p { margin: 0 0 1em; }
 .problem { padding: 1.4rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
 .problem h3 { margin-top: 1rem; }
 .problem p { color: var(--text-2); margin: 0; }
-.stat { display: grid; gap: .3rem 1.6rem; align-items: center; margin-top: 2rem; padding: 1.5rem 1.7rem; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
+.stat { display: grid; gap: .3rem 1.6rem; align-items: center; margin-top: 0; padding: 1.5rem 1.7rem; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
 @media (min-width: 700px) { .stat { grid-template-columns: auto 1fr; } }
 .stat-big { margin: 0; font: 700 clamp(2.6rem, 2rem + 2.6vw, 3.6rem)/1 var(--font-display); }
 .stat-text { margin: 0; font-size: 1.08rem; }
@@ -230,7 +230,7 @@ p { margin: 0 0 1em; }
 /* ---------- finder ---------- */
 .finder { max-width: 860px; margin-inline: auto; display: grid; gap: 1.2rem; }
 .finder-q { margin: 0; padding: 1.2rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); display: grid; gap: .55rem; }
-@media (min-width: 760px) { .finder-q { grid-template-columns: repeat(3, 1fr); } .finder-q legend { grid-column: 1 / -1; } }
+@media (min-width: 760px) { .finder-q { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); } .finder-q legend { grid-column: 1 / -1; } }
 .finder-q legend { display: flex; align-items: center; gap: .6rem; padding: 0; margin-bottom: .6rem; font: 650 1.12rem/1.3 var(--font-display); float: left; width: 100%; }
 .finder-q legend span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font: 700 .95rem/1 var(--font-body); }
 .choice { position: relative; display: flex; }
@@ -370,3 +370,65 @@ p { margin: 0 0 1em; }
 .cf-fallback textarea { width: 100%; margin-bottom: .8rem; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid var(--border-2); background: var(--bg); color: var(--text); font: .95rem/1.5 var(--font-body); resize: vertical; }
 .cf-copied { margin: .6rem 0 0; font-weight: 700; color: var(--ok); }
 .cf-copied:empty { display: none; }
+
+/* ---------- stats row ---------- */
+.stat-row { display: grid; gap: 1rem; margin-top: 2rem; }
+@media (min-width: 900px) { .stat-row { grid-template-columns: 1fr 1fr; } .stat-row .stat { grid-template-columns: 1fr; align-content: start; } }
+.stat-row .stat-text { font-size: 1.02rem; }
+.stat + .stat { background: var(--accent-2); }
+[data-theme='dark'] .stat + .stat { background: #9db6ff; }
+
+/* ---------- AI cards ---------- */
+.ai-grid { display: grid; gap: 1rem; }
+@media (min-width: 760px) { .ai-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .ai-grid { grid-template-columns: repeat(4, 1fr); } }
+.ai-card { display: flex; flex-direction: column; padding: 1.3rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow); }
+.ai-card h3 { margin: 1rem 0 .35rem; }
+.ai-card > p { color: var(--text-2); font-size: .98rem; }
+.ai-example { padding: .65rem .8rem; border-radius: 12px; background: var(--bg-2); font-size: .93rem; color: var(--text-2); }
+.ai-card .ai-price { margin: auto 0 0; }
+.ai-price { font-weight: 700; color: var(--accent); }
+.ai-demo-cta { display: grid; gap: 1rem 2rem; align-items: center; margin-top: 1.6rem; padding: 1.4rem 1.6rem; border-radius: 20px; border: 2px solid var(--accent); background: var(--surface); box-shadow: var(--shadow); }
+@media (min-width: 800px) { .ai-demo-cta { grid-template-columns: 1fr auto; } }
+.ai-demo-cta h3 { font-size: 1.3rem; margin-bottom: .3rem; }
+.ai-demo-cta p { margin: 0; color: var(--text-2); }
+.ai-demo-cta.big { margin-top: 0; }
+.ai-demo-cta.big h2 { margin-bottom: .4rem; }
+.ai-list { display: grid; gap: 1.2rem; }
+.ai-row { display: grid; gap: 1rem 2rem; padding: clamp(1.3rem, 1rem + 1.5vw, 2rem); border-radius: 20px; border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow); scroll-margin-top: 90px; }
+@media (min-width: 860px) { .ai-row { grid-template-columns: 300px 1fr; } }
+.ai-row-head { display: flex; gap: 1rem; align-items: flex-start; }
+.ai-row-head h3 { font-size: 1.35rem; margin-bottom: .25rem; }
+.ai-row-head .ai-price { margin: 0; }
+.ai-row-body > p:first-child { color: var(--text-2); }
+
+/* ---------- real projects ---------- */
+.proj-grid { display: grid; gap: 1.2rem; }
+@media (min-width: 820px) { .proj-grid { grid-template-columns: 1fr 1fr; } }
+.proj { display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow); }
+.proj-shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #0f172a; }
+.proj-shot img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.proj:hover .proj-shot img { transform: scale(1.03); }
+.proj-body { display: flex; flex-direction: column; flex: 1; padding: 1.2rem 1.3rem 1.4rem; }
+.proj-body h3 { font-size: 1.35rem; margin-bottom: .35rem; }
+.proj-body > p { color: var(--text-2); }
+.proj-proof { display: flex; gap: .5rem; align-items: flex-start; font-weight: 600; color: var(--text) !important; }
+.proj-proof svg { flex: none; width: 20px; height: 20px; margin-top: .2rem; color: var(--ok); }
+.proj-you { padding: .7rem .9rem; border-radius: 12px; background: var(--accent-soft); color: var(--text) !important; }
+.proj-links { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin: auto 0 0 !important; }
+.muted-link { color: var(--muted); }
+
+/* ---------- time calculator ---------- */
+.calc { max-width: 860px; margin-inline: auto; display: grid; gap: 1rem; padding: clamp(1.3rem, 1rem + 1.5vw, 2rem); border-radius: 20px; border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow); }
+@media (min-width: 760px) { .calc { grid-template-columns: repeat(3, 1fr); } .calc-out { grid-column: 1 / -1; } }
+.calc .field label { font-size: .95rem; line-height: 1.35; }
+.calc .field { align-content: end; }
+.calc-out { padding: 1.1rem 1.2rem; border-radius: 14px; background: var(--accent-soft); font-size: 1.08rem; }
+.calc-out p { margin: 0; }
+.calc-out p + p { margin-top: .5rem; }
+.calc-out strong { color: var(--accent); font-size: 1.15em; }
+.ai-ne .extra-price { color: var(--accent); }
+
+.get-grid.four { gap: 1rem; }
+@media (min-width: 1100px) { .get-grid.four { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 800px) { .price-notes { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }

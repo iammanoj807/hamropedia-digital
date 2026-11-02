@@ -1,6 +1,19 @@
-// The example websites shown on /examples/. Each demo is a made-up business,
-// built as a real working page so owners can click around on their own phone.
+// Example websites for made-up businesses: real, working pages that owners can try on their phone.
 export const demos = [
+  {
+    slug: 'ai-assistant',
+    name: 'Bright Nest Cleaning',
+    type: 'AI assistant & automation',
+    package: 'Starter + AI assistant',
+    summary: 'A cleaning company whose AI assistant answers customers and takes booking requests, while the owner is out cleaning.',
+    shows: [
+      'An assistant that answers prices, areas and booking questions',
+      'A "behind the scenes" panel showing the admin it does for the owner',
+      'Questions it cannot answer are passed to the owner, not guessed',
+      'An instant quote for different sizes of home',
+    ],
+    accent: '#7c3aed',
+  },
   {
     slug: 'momo-kitchen',
     name: 'Himal Momo Kitchen',
@@ -29,18 +42,47 @@ export const demos = [
     ],
     accent: '#0f766e',
   },
+];
+
+// Real projects. Facts and numbers come from the portfolio (iammanoj807.github.io/profile); keep them exact.
+export const projects = [
   {
-    slug: 'plumber',
-    name: 'Clearflow Plumbing',
-    type: 'Trades & local services',
-    package: 'Business + a custom tool',
-    summary: 'A plumber who wants serious enquiries with the details already filled in.',
-    shows: [
-      'A big "call now" button for emergencies',
-      'An instant price guide customers can try',
-      'A quote request form with the job details',
-      'The towns and areas covered',
-    ],
-    accent: '#1d4ed8',
+    slug: 'planck',
+    name: 'Planck AI',
+    kind: 'AI research assistant',
+    plain: 'Ask it anything. It searches the web, reads PDFs and web pages, looks at images and runs code to work out the answer. If one AI provider stops working, it switches to another and carries on.',
+    proof: 'In testing it finished 30 of 30 tasks even with its main AI provider switched off on every call.',
+    forYou: 'The same approach keeps a business assistant answering customers even when one AI service is down.',
+    demo: 'https://huggingface.co/spaces/manojthapaa/planck-ai',
+    code: 'https://github.com/iammanoj807/planck-ai',
+  },
+  {
+    slug: 'cognigraph',
+    name: 'CogniGraph',
+    kind: 'Talk to your documents',
+    plain: 'Upload documents, including scanned PDFs, and ask questions about them. It answers only from passages it finds in your documents, and shows how the ideas connect on a 3D map.',
+    proof: 'In testing it found the right passage in its top 3 results 95% of the time, against 80% for simple keyword search.',
+    forYou: 'Could be adapted so you and your staff get answers from your own manuals, policies or price lists.',
+    demo: 'https://huggingface.co/spaces/manojthapaa/CogniGraph',
+    code: 'https://github.com/iammanoj807/CogniGraph',
+  },
+  {
+    slug: 'neuroarc',
+    name: 'NeuroArc',
+    kind: 'AI job application assistant',
+    plain: 'Reads a CV (PDF or Word), finds live UK jobs and checks how well the CV fits each one. It only counts skills it can find word for word in the CV, so the AI cannot invent evidence.',
+    proof: 'Built so the AI returns its evidence as exact phrases, and the code throws out anything not found in the document.',
+    forYou: 'The same careful checking can be used to read forms, CVs or documents for a business without making things up.',
+    demo: 'https://huggingface.co/spaces/manojthapaa/NeuroArc',
+    code: 'https://github.com/iammanoj807/NeuroArc',
+  },
+  {
+    slug: 'fruitguard',
+    name: 'FruitGuard AI',
+    kind: 'Camera AI (MSc dissertation)',
+    plain: 'Recognises fruit through a camera in real time, at 73 frames a second. It was trained from only 207 labelled photos.',
+    proof: '96.3% accuracy in testing (52 of 54 images).',
+    forYou: 'Could be adapted to camera checks for a business, such as spotting products on a shelf.',
+    demo: 'https://huggingface.co/spaces/manojthapaa/fruit-guard-ai',
   },
 ];

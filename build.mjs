@@ -12,7 +12,8 @@ import {
 import { renderNepal } from './src/pages/nepal.js';
 import { renderMomo } from './src/demos/momo.js';
 import { renderBarber } from './src/demos/barber.js';
-import { renderPlumber } from './src/demos/plumber.js';
+import { renderAiDemo } from './src/demos/ai.js';
+import { renderAi } from './src/pages/ai.js';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(ROOT, 'dist');
@@ -45,6 +46,7 @@ const add = (route, html, { index = true } = {}) => {
 
 add('/', renderHome(version));
 add('/services/', renderServices(version));
+add('/ai/', renderAi(version));
 add('/prices/', renderPrices(version));
 add('/examples/', renderExamples(version));
 add('/how-it-works/', renderHow(version));
@@ -58,7 +60,7 @@ add('/404.html', render404(version), { index: false });
 // Example websites for made-up businesses: kept out of Google (noindex) and the sitemap.
 add('/examples/momo-kitchen/', renderMomo(), { index: false });
 add('/examples/barber/', renderBarber(), { index: false });
-add('/examples/plumber/', renderPlumber(), { index: false });
+add('/examples/ai-assistant/', renderAiDemo(), { index: false });
 
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>

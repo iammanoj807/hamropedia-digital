@@ -49,7 +49,7 @@ const THEME_BOOT = `(function(){try{if(localStorage.getItem('hd-theme')==='dark'
 /** Buttons to get in touch: email always, WhatsApp only when a number is set. */
 export function contactButtons({ subject = 'Website enquiry', big = false } = {}) {
   const size = big ? ' btn-lg' : '';
-  const wa = waLink(`Hi Manoj, I'm interested in a website for my business.`);
+  const wa = waLink(`Hi Manoj, I'm interested in a website or AI for my business.`);
   return `<a class="btn${size}" href="/contact/">Get a free quote ${ICONS.arrow}</a>${
     wa ? `<a class="btn btn-ghost${size}" href="${wa}" rel="noopener">${ICONS.whatsapp} WhatsApp me</a>` : `<a class="btn btn-ghost${size}" href="${mailLink(subject)}">${ICONS.mail} Email me</a>`
   }`;
@@ -125,21 +125,22 @@ ${p.body}
   <div class="wrap footer-grid">
     <div class="footer-about">
       <a class="logo" href="/">${ICONS.logo}<span class="logo-text">Hamropedia <b>Digital</b></span></a>
-      <p>Simple, fast websites for small businesses across the UK and in Nepal, explained in plain English. Run by ${esc(site.owner)}, a software engineer in Birmingham.</p>
+      <p>Websites and AI for small businesses across the UK and in Nepal, explained in plain English. Run by ${esc(site.owner)}, an AI software engineer in Birmingham.</p>
       <p><a href="${mailLink()}">${esc(site.email)}</a></p>
     </div>
     <div>
-      <h2 class="footer-h">Websites</h2>
+      <h2 class="footer-h">Services</h2>
       <ul>
-        <li><a href="/services/">What I do</a></li>
+        <li><a href="/services/">Websites</a></li>
+        <li><a href="/ai/">AI &amp; automation</a></li>
         <li><a href="/prices/">Prices</a></li>
-        <li><a href="/examples/">Example websites</a></li>
-        <li><a href="/how-it-works/">How it works</a></li>
+        <li><a href="/examples/">Examples &amp; real projects</a></li>
       </ul>
     </div>
     <div>
       <h2 class="footer-h">Help</h2>
       <ul>
+        <li><a href="/how-it-works/">How it works</a></li>
         <li><a href="/questions/">Questions &amp; plain-English words</a></li>
         <li><a href="/contact/">Get a free quote</a></li>
         <li><a href="/about/">About me</a></li>
@@ -205,7 +206,7 @@ export function faqList(list) {
 }
 
 /** Final call-to-action band used at the bottom of most pages. */
-export function ctaBand(title = 'Ready to get your business online?', text = 'Tell me about your business. I will reply with a fixed price and a simple plan, free and with no obligation.') {
+export function ctaBand(title = 'Ready to grow your business?', text = 'Tell me about your business. I will reply with ideas, one fixed price and a simple plan, free and with no obligation.') {
   return `<section class="cta-band">
   <div class="wrap cta-inner">
     <div><h2>${title}</h2><p>${text}</p></div>

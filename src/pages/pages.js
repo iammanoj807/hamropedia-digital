@@ -1,7 +1,7 @@
-import { site, packages, care, extras, faqs, marketPrice } from '../data/site.js';
-import { demos } from '../data/examples.js';
+import { site, packages, care, extras, faqs, marketPrice, aiServices } from '../data/site.js';
+import { demos, projects } from '../data/examples.js';
 import { layout, pageHead, ICONS, esc, gbp, faqList, faqSchema, ctaBand, breadcrumbSchema, mailLink, waLink } from '../layout.js';
-import { priceCards, exampleCard } from './home.js';
+import { priceCards, exampleCard, projectCard, aiPrice } from './home.js';
 
 const tick = (x) => `<li>${ICONS.check}${esc(x)}</li>`;
 const priceOf = (x) => (x.quote ? 'Fixed quote after a free chat' : `${x.from ? 'From ' : ''}${gbp(x.gbp)}`);
@@ -50,20 +50,13 @@ const SERVICES = [
     gets: ['An honest check of what is wrong, in plain words', 'Fixes, or a move to something faster and cheaper', 'Your web address and Google ranking kept safe', 'Old links that still work'],
     price: `From ${gbp(extras[1].gbp)}`,
   },
-  {
-    id: 'tools', icon: 'tool', title: 'Custom tools for your business',
-    what: 'Small pieces of software that save you time: price calculators, quote forms, staff rotas, stock lists, or turning a messy spreadsheet into a simple app.',
-    good: 'Any business doing the same task by hand every day.',
-    gets: ['You describe the problem in your own words', 'I suggest the simplest thing that solves it', 'A fixed price before any work starts', 'Training, so you and your staff can use it'],
-    price: 'Fixed quote after a free chat',
-  },
 ];
 
 export function renderServices(version) {
-  const crumbs = [{ name: 'What I do' }];
+  const crumbs = [{ name: 'Websites' }];
   const body = `${pageHead({
     crumbs,
-    eyebrow: 'What I do',
+    eyebrow: 'Websites',
     title: 'Everything a small business needs to be found online',
     lead: 'Pick one thing or combine a few. Every service has a clear price, and I will always suggest the simplest option that does the job.',
   })}
@@ -84,14 +77,18 @@ export function renderServices(version) {
     <p class="service-price">${ICONS.pound}<span><strong>Price:</strong> ${esc(s.price)}</span><a class="text-link" href="/contact/">Ask about this ${ICONS.arrow}</a></p>
   </article>`).join('')}
   </div>
+  <aside class="ai-demo-cta">
+    <div><h3>Want customers answered and admin done for you?</h3><p>See AI assistants, WhatsApp assistants and admin automation, set up by an AI engineer.</p></div>
+    <a class="btn" href="/ai/">AI &amp; automation ${ICONS.arrow}</a>
+  </aside>
 </section>
 ${ctaBand('Not sure which one you need?', 'Tell me what is going on in your business, in your own words. I will tell you what I would do, and what it would cost.')}`;
   return layout({
-    title: `What I do: websites, Google Maps, bookings and shops | ${site.name}`,
+    title: `Websites, Google Maps, bookings and shops | ${site.name}`,
     ogTitle: 'Everything a small business needs to be found online',
-    description: 'Websites, Google Business Profiles, online bookings and orders, small online shops, website care and custom tools for small businesses, with clear prices.',
+    description: 'Websites, Google Business Profiles, online bookings and orders, small online shops and website care for small businesses, with clear, fixed prices.',
     path: '/services/', section: '/services/', body, version,
-    schema: [breadcrumbSchema([{ name: 'What I do', path: '/services/' }])],
+    schema: [breadcrumbSchema([{ name: 'Websites', path: '/services/' }])],
   });
 }
 
@@ -122,6 +119,14 @@ export function renderPrices(version) {
       <ul class="ticks">${care.includes.map(tick).join('')}</ul>
     </div>
   </div>
+</section>
+
+<section class="wrap section" id="ai-prices">
+  <div class="section-head"><div><p class="eyebrow">AI &amp; automation</p><h2>AI prices</h2></div><a class="text-link" href="/ai/">What each one does ${ICONS.arrow}</a></div>
+  <div class="extra-grid">
+    ${aiServices.map((x) => `<article class="extra"><h3>${esc(x.name)}</h3><p class="extra-price">${esc(aiPrice(x))}</p><p>${esc(x.what)}</p></article>`).join('')}
+  </div>
+  <p class="muted small">Monthly fees cover the AI running costs for typical small-business use, plus updates and a monthly check. Very heavy use is quoted first. No contract: stop any time.</p>
 </section>
 
 <section class="wrap section">
@@ -156,9 +161,9 @@ export function renderPrices(version) {
 </section>
 ${ctaBand('Want an exact price for your business?', 'Tell me a little about what you do. I will reply with a fixed price, free and with no obligation.')}`;
   return layout({
-    title: `Prices: websites from ${gbp(packages[0].gbp)}, fixed and clear | ${site.name}`,
+    title: `Prices: websites from ${gbp(packages[0].gbp)}, AI from ${gbp(Math.min(...aiServices.map((x) => x.gbp)))} | ${site.name}`,
     ogTitle: `Website prices: from ${gbp(packages[0].gbp)}, fixed and clear`,
-    description: `Fixed-price websites for small businesses: one page ${gbp(packages[0].gbp)}, up to 5 pages ${gbp(packages[1].gbp)}, bookings and orders from ${gbp(packages[2].gbp)}. Every running cost explained in plain English.`,
+    description: `Fixed prices for small businesses: one-page website ${gbp(packages[0].gbp)}, up to 5 pages ${gbp(packages[1].gbp)}, AI assistant from ${gbp(aiServices[0].gbp)}. Every running cost explained in plain English.`,
     path: '/prices/', section: '/prices/', body, version,
     schema: [
       breadcrumbSchema([{ name: 'Prices', path: '/prices/' }]),
@@ -175,7 +180,7 @@ ${ctaBand('Want an exact price for your business?', 'Tell me a little about what
 
 // ---------------------------------------------------------------- How it works
 const PROCESS = [
-  ['A free chat', 'Day 1', 'A 15-minute phone call, video call or a few messages, whichever you prefer. You tell me about your business and your customers. I ask simple questions like "what do people usually call you about?"', ['No preparation needed', 'No obligation, no pushy selling']],
+  ['A free chat', 'Day 1', 'After your first email: a 15-minute call, a video call or just a few emails, whichever you prefer. You tell me about your business and your customers. I ask simple questions like "what do people usually call you about?"', ['No preparation needed', 'No obligation, no pushy selling']],
   ['A plan and one fixed price', 'Within 2 days', 'I send a short, plain-English plan: what pages you get, what they say, how long it takes and the one fixed price.', ['Nothing starts until you say yes', 'You pay half to begin']],
   ['You send what you have', 'Week 1', 'Your logo if you have one, some photos (phone photos are often fine), your prices and opening hours. I tell you exactly what I need.', ['A simple checklist, below', 'I write the words with you']],
   ['I build it, you check it', 'Week 1 to 2', 'I send you a private link to your new website. Look at it on your phone, show your family, tell me what to change.', ['Changes until you are happy', 'Nobody else sees it yet']],
@@ -263,14 +268,21 @@ export function renderExamples(version) {
   const body = `${pageHead({
     crumbs,
     eyebrow: 'Examples',
-    title: 'Example websites you can try',
-    lead: 'These are real, working websites I built for made-up businesses, to show what yours could do. Open them on your phone and tap around.',
+    title: 'Examples you can try, and real projects',
+    lead: 'Working example websites for made-up businesses, to show what yours could do, followed by real AI projects I have built. Open them on your phone and tap around.',
   })}
 <section class="wrap section">
+  <div class="section-head"><div><p class="eyebrow">Examples for made-up businesses</p><h2>Try what your customers would see</h2></div></div>
   <div class="ex-list">${demos.map((d) => exampleCard(d, { big: true })).join('')}</div>
 </section>
-<section class="band">
+<section class="band" id="real">
   <div class="wrap section">
+    <div class="section-head"><div><p class="eyebrow">Real projects</p><h2>AI I have built, with live demos</h2></div></div>
+    <p class="section-lead">Each project runs online, so you can try it in your browser. The live demos sleep when nobody is using them, so the first visit can take a minute to wake up.</p>
+    <div class="proj-grid">${projects.map((p) => projectCard(p, { full: true })).join('')}</div>
+  </div>
+</section>
+<section class="wrap section">
     <article class="case">
       <div>
         <p class="eyebrow">Real project</p>
@@ -286,13 +298,12 @@ export function renderExamples(version) {
       </div>
       <div class="case-shot"><img src="/images/examples/hamropedia.webp" alt="The hamropedia.com home page" width="1280" height="800" loading="lazy"></div>
     </article>
-  </div>
 </section>
 ${ctaBand('Want one like these for your business?', 'Tell me which example is closest to what you need. I will reply with a fixed price.')}`;
   return layout({
-    title: `Example websites for small businesses | ${site.name}`,
-    ogTitle: 'Example websites you can try on your phone',
-    description: 'Try working example websites for a takeaway, a barber and a plumber, with online booking and an instant price guide, plus a real project: hamropedia.com.',
+    title: `Example websites and real AI projects | ${site.name}`,
+    ogTitle: 'Example websites and real AI projects you can try',
+    description: 'Try an AI assistant for a cleaning company, a takeaway website and barber booking, plus real AI projects with live demos: Planck AI, CogniGraph, NeuroArc and FruitGuard AI.',
     path: '/examples/', section: '/examples/', body, version,
     schema: [breadcrumbSchema([{ name: 'Examples', path: '/examples/' }])],
   });
@@ -304,14 +315,16 @@ export function renderAbout(version) {
   const body = `${pageHead({ crumbs, eyebrow: 'About', title: 'Hi, I am Manoj' })}
 <section class="wrap section narrow about">
   <figure class="about-photo"><img src="/images/manojkumarthapa.webp" alt="${esc(site.owner)}" width="440" height="519"></figure>
-  <p class="lead">I am ${esc(site.owner)}, a software engineer living in Birmingham, originally from Nepal. I started Hamropedia Digital to help small businesses get online properly: at a fair price, explained in plain English, and without being tied into contracts.</p>
-  <p>I build and run <a href="https://hamropedia.com/">hamropedia.com</a>, a website with guides, news in English and Nepali, and free tools. Building it taught me what really matters for a small website: it must load fast, work on every phone, and show up on Google.</p>
+  <p class="lead">I am ${esc(site.owner)}, an AI software engineer living in Birmingham, originally from Nepal. I started Hamropedia Digital to help small businesses get online and use AI properly: at a fair price, explained in plain English, and without being tied into contracts.</p>
+  <p>I have an MSc in Artificial Intelligence (Distinction) from Aston University, and before that I was a software engineer at Accenture. I build AI assistants and tools, like <a href="/examples/#real">Planck AI and CogniGraph</a>, and I build and run <a href="https://hamropedia.com/">hamropedia.com</a>, a website with guides, news in English and Nepali, and free tools.</p>
+  <h2>Why small businesses?</h2>
+  <p>Big companies have teams for websites and AI. Small businesses usually have nobody, and they are the ones being left behind online. I want to give them the same tools, at prices that make sense for a small business.</p>
   <h2>Why plain English?</h2>
   <p>Too many owners pay for websites they do not understand, built on systems they cannot change, with costs they did not expect. I would rather explain things properly, keep them simple, and make sure you own what you pay for.</p>
   <h2>How I work</h2>
   <ul class="ticks">
     <li>${ICONS.check}You deal with me directly, from the first chat to launch and after.</li>
-    <li>${ICONS.check}I work with businesses anywhere in the UK, by phone, video call, WhatsApp or email, and with businesses in Nepal.</li>
+    <li>${ICONS.check}I work with businesses anywhere in the UK, and in Nepal. Start with an email; after that we can talk by phone, video call or email, whichever suits you.</li>
     <li>${ICONS.check}I speak English and Nepali.</li>
     <li>${ICONS.check}One fixed price, agreed before any work starts.</li>
   </ul>
@@ -321,11 +334,11 @@ ${ctaBand()}`;
   return layout({
     title: `About ${site.owner} | ${site.name}`,
     ogTitle: `About ${site.owner}, Hamropedia Digital`,
-    description: `${site.owner} is a software engineer in Birmingham who builds simple, fixed-price websites for small businesses across the UK and in Nepal, explained in plain English.`,
+    description: `${site.owner} is an AI software engineer in Birmingham who builds fixed-price websites and AI assistants for small businesses across the UK and in Nepal.`,
     path: '/about/', section: '/about/', body, version,
     schema: [
       breadcrumbSchema([{ name: 'About me', path: '/about/' }]),
-      { '@context': 'https://schema.org', '@type': 'Person', name: site.owner, jobTitle: 'Software Engineer', url: site.url + '/about/', image: site.url + '/images/manojkumarthapa.webp', sameAs: Object.values(site.social), worksFor: { '@type': 'Organization', name: site.name, url: site.url + '/' } },
+      { '@context': 'https://schema.org', '@type': 'Person', name: site.owner, jobTitle: 'AI Software Engineer', alumniOf: { '@type': 'CollegeOrUniversity', name: 'Aston University' }, url: site.url + '/about/', image: site.url + '/images/manojkumarthapa.webp', sameAs: Object.values(site.social), worksFor: { '@type': 'Organization', name: site.name, url: site.url + '/' } },
     ],
   });
 }
@@ -349,6 +362,7 @@ export function renderContact(version) {
         <option value="Not sure yet">Not sure yet, help me choose</option>
         ${packages.map((p) => `<option value="${esc(p.name)}" data-id="${p.id}">${esc(p.name)}: ${esc(p.what.toLowerCase())}</option>`).join('')}
         <option value="Care plan" data-id="care">Care plan for my website</option>
+        ${aiServices.map((x) => `<option value="${esc(x.name)}" data-id="${x.id}">${esc(x.name)}</option>`).join('')}
         ${extras.map((x) => `<option value="${esc(x.name)}" data-id="${x.id}">${esc(x.name)}</option>`).join('')}
       </select>
     </div>
@@ -387,7 +401,7 @@ export function renderContact(version) {
   return layout({
     title: `Get a free quote | ${site.name}`,
     ogTitle: 'Get a free website quote',
-    description: 'Tell me about your business and get a fixed-price quote for your website, free and with no obligation. I reply in plain English, usually within one working day.',
+    description: 'Tell me about your business and get a fixed-price quote for a website or AI assistant, free and with no obligation. I reply in plain English, usually within one working day.',
     path: '/contact/', section: '/contact/', body, version,
     schema: [breadcrumbSchema([{ name: 'Free quote', path: '/contact/' }])],
   });
@@ -450,5 +464,5 @@ export function render404(version) {
   <p class="lead">The link may be old or mistyped. These might help:</p>
   <p class="btn-row center-row"><a class="btn" href="/">Home</a><a class="btn btn-ghost" href="/examples/">Example websites</a><a class="btn btn-ghost" href="/prices/">Prices</a></p>
 </section>`;
-  return layout({ title: `Page not found | ${site.name}`, description: 'This page could not be found. Visit the Hamropedia Digital home page, example websites or prices instead.', path: '/404.html', body, version, noindex: true });
+  return layout({ title: `Page not found | ${site.name}`, description: 'This page could not be found. Visit the Hamropedia Digital home page, the example websites, AI services or prices instead.', path: '/404.html', body, version, noindex: true });
 }

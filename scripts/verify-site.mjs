@@ -30,6 +30,8 @@ for (const file of htmlFiles) {
   if (title.length > 75) problems.push(`${rel}: title is ${title.length} characters (keep it under 75)`);
   if (desc.length < 70 || desc.length > 200) problems.push(`${rel}: description is ${desc.length} characters (aim for 70 to 200)`);
   if (h1s !== 1) problems.push(`${rel}: ${h1s} <h1> tags (want exactly 1)`);
+  const visible = html.replace(/<script[\s\S]*?<\/script>/g, '');
+  if (/\bundefined\b|\bNaN\b/.test(visible)) problems.push(`${rel}: page text contains "undefined" or "NaN"`);
   if (!noindex && !html.includes('<link rel="canonical"')) problems.push(`${rel}: no canonical link`);
   for (const m of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)) {
     if (m[1].startsWith('//')) continue;
