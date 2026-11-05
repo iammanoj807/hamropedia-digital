@@ -433,6 +433,7 @@ export function renderPrivacy(version) {
     title: `Privacy policy | ${site.name}`,
     description: 'How Hamropedia Digital handles your information: no tracking or analytics, and enquiries used only to reply and prepare a quote. Your UK GDPR rights explained.',
     path: '/privacy/', body, version,
+    schema: [breadcrumbSchema([{ name: 'Privacy policy', path: '/privacy/' }])],
   });
 }
 
@@ -460,6 +461,7 @@ export function renderTerms(version) {
     title: `Terms, in plain English | ${site.name}`,
     description: 'How working with Hamropedia Digital works: written fixed-price quotes, half now and half at launch, you own your website and domain, and no contracts.',
     path: '/terms/', body, version,
+    schema: [breadcrumbSchema([{ name: 'Terms', path: '/terms/' }])],
   });
 }
 

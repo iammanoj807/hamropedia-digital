@@ -116,8 +116,8 @@ export function renderHome(version) {
       </ul>
     </div>
     <div class="hero-visual" aria-hidden="true">
-      <div class="phone phone-back"><img src="/images/examples/${demos[1].slug}.webp" alt="" width="390" height="720"></div>
-      <div class="phone phone-front"><img src="/images/examples/${aiDemo.slug}.webp" alt="" width="390" height="720"></div>
+      <div class="phone phone-back"><img src="/images/examples/${demos[1].slug}.webp" alt="Example small business website (${esc(demos[1].name)}) on a phone" width="390" height="720"></div>
+      <div class="phone phone-front"><img src="/images/examples/${aiDemo.slug}.webp" alt="Example AI assistant answering customer questions (${esc(aiDemo.name)}) on a phone" width="390" height="720"></div>
       <p class="hero-tag">${ICONS.phone}Real example websites you can try</p>
     </div>
   </div>
