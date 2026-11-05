@@ -140,6 +140,9 @@ ${p.body}
         <li><a href="/services/">Websites</a></li>
         <li><a href="/ai/">AI &amp; automation</a></li>
         <li><a href="/prices/">Prices</a></li>
+        <li><a href="/websites-for-tradesmen/">Websites for tradesmen</a></li>
+        <li><a href="/web-design-birmingham/">Web design in Birmingham</a></li>
+        <li><a href="/how-much-does-a-website-cost/">How much does a website cost?</a></li>
         <li><a href="/examples/">Examples &amp; real projects</a></li>
       </ul>
     </div>

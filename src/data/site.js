@@ -10,6 +10,9 @@ export const site = {
   // Your WhatsApp number in international format with no + or spaces, e.g. '447700900123'.
   // Leave it empty and the WhatsApp buttons are hidden.
   whatsapp: '',
+  // Sole trader, not VAT-registered (registration is only required above £90,000 turnover in 12 months).
+  // If you ever register for VAT, set this to true: every "no VAT to add" line on the site disappears.
+  vatRegistered: false,
   // The date on the privacy policy. Change it whenever you change the policy.
   privacyUpdated: '2 November 2026',
   social: {
@@ -230,6 +233,10 @@ export const faqs = [
     a: 'Half when we start, and the other half when you are happy with the work and before it goes live. You see and check everything first.',
     home: true,
   },
+  ...(site.vatRegistered ? [] : [{
+    q: 'Do I pay VAT on top of the price?',
+    a: 'No. I am a sole trader and not VAT-registered, so there is no VAT to add: the price you see is the price you pay.',
+  }]),
   {
     q: 'Can I change the website myself?',
     a: 'With the care plan, you just send me a message ("new price for haircuts is £18") and I change it for you, usually within two working days. If you would rather edit everything yourself, tell me at the start and I will build it on an easy editor you can use instead.',

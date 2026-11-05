@@ -97,7 +97,7 @@ export function renderAi(version) {
 ${ctaBand('Find out what AI could do for you', 'Free chat, no obligation. Tell me where your time goes, and I will tell you honestly what AI could and could not do for your business.')}`;
 
   return layout({
-    title: `AI Assistants and Automation for Small Businesses | ${site.name}`,
+    title: `AI for Small Business: Chatbots, WhatsApp and Automation | ${site.name}`,
     ogTitle: 'Let AI answer customers and handle the admin',
     description: `AI assistants for your website and WhatsApp, admin automation and ask-your-documents tools for small UK businesses. Set up by an AI engineer, from ${gbp(Math.min(...aiServices.map((s) => s.gbp)))}.`,
     path: '/ai/', section: '/ai/', body, version,

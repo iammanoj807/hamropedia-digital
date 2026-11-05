@@ -37,7 +37,7 @@ const SERVICES = [
     price: `From ${gbp(packages[2].gbp)}`,
   },
   {
-    id: 'care', icon: 'heart', title: 'Looking after your website',
+    id: 'care', icon: 'heart', title: 'Website maintenance and care',
     what: 'You message me what to change, and I change it. I also check every month that everything is working.',
     good: 'Owners who would rather run their business than learn website software.',
     gets: care.includes,
@@ -62,6 +62,7 @@ export function renderServices(version) {
   })}
 <section class="wrap section">
   <nav class="jump" aria-label="Services on this page">${SERVICES.map((s) => `<a href="#${s.id}">${ICONS[s.icon]}${esc(s.title)}</a>`).join('')}</nav>
+  <p class="muted">Electrician, plumber or builder? See <a href="/websites-for-tradesmen/">websites for tradesmen</a>. In the Midlands? See <a href="/web-design-birmingham/">web design in Birmingham</a>.</p>
   <div class="service-list">
   ${SERVICES.map((s) => `<article class="service" id="${s.id}">
     <div class="service-top"><span class="icon-tile">${ICONS[s.icon]}</span><h2>${esc(s.title)}</h2></div>
@@ -84,7 +85,7 @@ export function renderServices(version) {
 </section>
 ${ctaBand('Not sure which one you need?', 'Tell me what is going on in your business, in your own words. I will tell you what I would do, and what it would cost.')}`;
   return layout({
-    title: `Websites, Google Maps, bookings and shops | ${site.name}`,
+    title: `Website Design for Small Businesses: Sites, Bookings, Shops | ${site.name}`,
     ogTitle: 'Everything a small business needs to be found online',
     description: 'Websites, Google Business Profiles, online bookings and orders, small online shops and website care for small businesses, with clear, fixed prices.',
     path: '/services/', section: '/services/', body, version,
@@ -103,7 +104,7 @@ export function renderPrices(version) {
     lead: `You know the full price before anything starts. These are launch prices while I take on my first clients: ${esc(marketPrice.text.charAt(0).toLowerCase() + marketPrice.text.slice(1))}`,
   })}
 <section class="wrap section">
-  <p class="source-note">Typical prices: <a href="${marketPrice.url}" rel="noopener">${esc(marketPrice.source)}</a>.</p>
+  <p class="source-note">Typical prices: <a href="${marketPrice.url}" rel="noopener">${esc(marketPrice.source)}</a>. Comparing options? Read <a href="/how-much-does-a-website-cost/">how much a website costs in the UK</a>.</p>
   ${priceCards()}
 </section>
 
@@ -152,6 +153,7 @@ export function renderPrices(version) {
   </div>
   <h2>How payment works</h2>
   <ul class="ticks">
+    ${site.vatRegistered ? '' : `<li>${ICONS.check}No VAT to add: I am not VAT-registered, so the price you see is the price you pay.</li>`}
     <li>${ICONS.check}Half when we start, half when you are happy and before your website goes live.</li>
     <li>${ICONS.check}Bank transfer, with a proper invoice for your records.</li>
     <li>${ICONS.check}The price is fixed. If you ask for something new halfway through, I tell you the cost first, and you decide.</li>
@@ -161,7 +163,7 @@ export function renderPrices(version) {
 </section>
 ${ctaBand('Want an exact price for your business?', 'Tell me a little about what you do. I will reply with a fixed price, free and with no obligation.')}`;
   return layout({
-    title: `Prices: websites from ${gbp(packages[0].gbp)}, AI from ${gbp(Math.min(...aiServices.map((x) => x.gbp)))} | ${site.name}`,
+    title: `Website Design Prices UK: Websites from ${gbp(packages[0].gbp)}, AI from ${gbp(Math.min(...aiServices.map((x) => x.gbp)))} | ${site.name}`,
     ogTitle: `Website prices: from ${gbp(packages[0].gbp)}, fixed and clear`,
     description: `Fixed prices for small businesses: one-page website ${gbp(packages[0].gbp)}, up to 5 pages ${gbp(packages[1].gbp)}, AI assistant from ${gbp(aiServices[0].gbp)}. Every running cost explained in plain English.`,
     path: '/prices/', section: '/prices/', body, version,
@@ -325,7 +327,7 @@ export function renderAbout(version) {
   <h2>How I work</h2>
   <ul class="ticks">
     <li>${ICONS.check}You deal with me directly, from the first chat to launch and after.</li>
-    <li>${ICONS.check}I work with businesses anywhere in the UK. Start with an email; after that we can talk by phone, video call or email, whichever suits you.</li>
+    <li>${ICONS.check}I work with businesses anywhere in the UK, and I am based in Birmingham (see <a href="/web-design-birmingham/">web design in Birmingham and the West Midlands</a>). Start with an email; after that we can talk by phone, video call or email, whichever suits you.</li>
     <li>${ICONS.check}I speak English and Nepali.</li>
     <li>${ICONS.check}One fixed price, agreed before any work starts.</li>
   </ul>

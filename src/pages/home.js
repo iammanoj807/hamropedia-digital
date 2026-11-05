@@ -39,7 +39,7 @@ export function priceCards({ compact = false } = {}) {
     ${p.featured ? '<p class="badge">Best for most businesses</p>' : ''}
     <h3>${esc(p.name)}</h3>
     <p class="price-what">${esc(p.what)}</p>
-    <p class="price">${price(p)}<span>one-off</span></p>
+    <p class="price">${price(p)}<span>one-off${site.vatRegistered ? '' : ', no VAT'}</span></p>
     <p class="price-time">${ICONS.calendar}${esc(p.time)}</p>
     <p class="price-best">${esc(p.best)}</p>
     <ul class="ticks">${(compact ? p.includes.slice(0, 4) : p.includes).map((x) => `<li>${ICONS.check}${esc(x)}</li>`).join('')}</ul>
@@ -105,7 +105,7 @@ export function renderHome(version) {
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Websites &amp; AI for small businesses · anywhere in the UK</p>
+      <p class="eyebrow">Web design &amp; AI for small businesses · anywhere in the UK</p>
       <h1>More customers, less admin, <em>without the jargon</em>.</h1>
       <p class="lead">I am an AI engineer who builds simple websites and AI assistants for small businesses. Get found on Google, answer customers day and night, and hand the boring admin to software. Fixed prices from ${gbp(lowestPrice)}.</p>
       <div class="btn-row">${contactButtons({ big: true })}</div>
@@ -225,7 +225,7 @@ export function renderHome(version) {
 ${ctaBand('Ready to grow your business?', 'Tell me how your business works. I will reply with ideas, one fixed price and a simple plan, free and with no obligation.')}`;
 
   return layout({
-    title: `Small Business Websites and AI in the UK | ${site.name}`,
+    title: `Affordable Web Design for Small Businesses in the UK | ${site.name}`,
     ogTitle: 'More customers, less admin, without the jargon',
     description: site.description,
     path: '/',

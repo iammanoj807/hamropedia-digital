@@ -14,6 +14,7 @@ import { renderMomo } from './src/demos/momo.js';
 import { renderBarber } from './src/demos/barber.js';
 import { renderAiDemo } from './src/demos/ai.js';
 import { renderAi } from './src/pages/ai.js';
+import { renderTradesmen, renderBirmingham, renderCostGuide } from './src/pages/landing.js';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(ROOT, 'dist');
@@ -48,6 +49,9 @@ add('/', renderHome(version));
 add('/services/', renderServices(version));
 add('/ai/', renderAi(version));
 add('/prices/', renderPrices(version));
+add('/how-much-does-a-website-cost/', renderCostGuide(version));
+add('/websites-for-tradesmen/', renderTradesmen(version));
+add('/web-design-birmingham/', renderBirmingham(version));
 add('/examples/', renderExamples(version));
 add('/how-it-works/', renderHow(version));
 add('/questions/', renderQuestions(version));
