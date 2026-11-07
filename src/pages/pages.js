@@ -327,7 +327,7 @@ export function renderAbout(version) {
   <h2>How I work</h2>
   <ul class="ticks">
     <li>${ICONS.check}You deal with me directly, from the first chat to launch and after.</li>
-    <li>${ICONS.check}I work with businesses anywhere in the UK, and I am based in Birmingham (see <a href="/web-design-birmingham/">web design in Birmingham and the West Midlands</a>). Start with an email; after that we can talk by phone, video call or email, whichever suits you.</li>
+    <li>${ICONS.check}<span>I work with businesses anywhere in the UK, and I am based in Birmingham (see <a href="/web-design-birmingham/">web design in Birmingham and the West Midlands</a>). Start with an email; after that we can talk by phone, video call or email, whichever suits you.</span></li>
     <li>${ICONS.check}I speak English and Nepali.</li>
     <li>${ICONS.check}One fixed price, agreed before any work starts.</li>
   </ul>
