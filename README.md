@@ -19,6 +19,6 @@ It is part of [Hamropedia](https://hamropedia.com).
 
 ## Author
 
-Made by **Manoj Kumar Thapa**, AI software engineer in Birmingham, United Kingdom.
+Made by **Manoj Kumar Thapa**, AI software engineer in the United Kingdom.
 
 [GitHub](https://github.com/iammanoj807) · [Portfolio](https://iammanoj807.github.io/profile/) · [LinkedIn](https://www.linkedin.com/in/manoj-kumar-thapa-7595a5168)

@@ -62,7 +62,7 @@ export function renderServices(version) {
   })}
 <section class="wrap section">
   <nav class="jump" aria-label="Services on this page">${SERVICES.map((s) => `<a href="#${s.id}">${ICONS[s.icon]}${esc(s.title)}</a>`).join('')}</nav>
-  <p class="muted">Electrician, plumber or builder? See <a href="/websites-for-tradesmen/">websites for tradesmen</a>. In the Midlands? See <a href="/web-design-birmingham/">web design in Birmingham</a>.</p>
+  <p class="muted">Electrician, plumber or builder? See <a href="/websites-for-tradesmen/">websites for tradesmen</a>.</p>
   <div class="service-list">
   ${SERVICES.map((s) => `<article class="service" id="${s.id}">
     <div class="service-top"><span class="icon-tile">${ICONS[s.icon]}</span><h2>${esc(s.title)}</h2></div>
@@ -317,9 +317,19 @@ export function renderAbout(version) {
   const crumbs = [{ name: 'About me' }];
   const body = `${pageHead({ crumbs, eyebrow: 'About', title: 'Hi, I am Manoj' })}
 <section class="wrap section narrow about">
-  <figure class="about-photo"><img src="/images/manojkumarthapa.webp" alt="${esc(site.owner)}" width="440" height="519"><figcaption>${esc(site.owner)}<span>AI Software Engineer, Birmingham, United Kingdom</span></figcaption></figure>
-  <p class="lead">I am ${esc(site.owner)}, an AI software engineer living in Birmingham, originally from Nepal. I started Hamropedia Digital to help small businesses get online and use AI properly: at a fair price, explained in plain English, and without being tied into contracts.</p>
+  <figure class="about-photo"><img src="/images/manojkumarthapa.webp" alt="${esc(site.owner)}" width="440" height="519"><figcaption>${esc(site.owner)}<span>AI Software Engineer, United Kingdom</span></figcaption></figure>
+  <p>I am ${esc(site.owner)}, an AI software engineer originally from Nepal, now living in the UK. I run Hamropedia Digital, which builds websites and AI tools for small businesses all over the UK: at a fixed price, explained in plain English, and with no contract to tie you in.</p>
   <p>I have an MSc in Artificial Intelligence (Distinction) from Aston University, and before that I was a software engineer at Accenture. I build AI assistants and tools, like <a href="/examples/#real">Planck AI and CogniGraph</a>, and I build and run <a href="https://hamropedia.com/">hamropedia.com</a>, a website with guides, news in English and Nepali, and free tools.</p>
+  <h2>What Hamropedia Digital does</h2>
+  <ul class="ticks">
+    <li>${ICONS.check}<span><b>Websites:</b> a one-page website for ${gbp(packages[0].gbp)} (${packages[0].time.toLowerCase()}), a full website of up to 5 pages for ${gbp(packages[1].gbp)} (${packages[1].time.toLowerCase()}), or online bookings and orders from ${gbp(packages[2].gbp)}. See <a href="/services/">websites</a>.</span></li>
+    <li>${ICONS.check}<span><b>Get found on Google:</b> your free Google Business Profile set up or fixed for ${gbp(extras[0].gbp)}, so customers find you on Google Maps.</span></li>
+    <li>${ICONS.check}<span><b>AI and automation:</b> an AI assistant for your website or WhatsApp that answers customers day and night, automation for repetitive admin, and an assistant that answers from your own documents. See <a href="/ai/">AI and automation</a>.</span></li>
+    <li>${ICONS.check}<span><b>Looking after it:</b> an optional care plan for ${gbp(care.gbp)} a month for small changes and monthly checks, with no contract.</span></li>
+  </ul>
+  <p>Every price, and every running cost after launch, is on the <a href="/prices/">prices page</a>.</p>
+  <h2>Who I work with</h2>
+  <p>Small businesses anywhere in the UK: shops, takeaways, salons, barbers, cleaners, tradespeople, tutors, clinics, accountants and charities. Everything is done online, so it makes no difference where you are. Electrician, plumber or builder? See <a href="/websites-for-tradesmen/">websites for tradesmen</a>.</p>
   <h2>Why small businesses?</h2>
   <p>Big companies have teams for websites and AI. Small businesses usually have nobody, and they are the ones being left behind online. I want to give them the same tools, at prices that make sense for a small business.</p>
   <h2>Why plain English?</h2>
@@ -327,9 +337,10 @@ export function renderAbout(version) {
   <h2>How I work</h2>
   <ul class="ticks">
     <li>${ICONS.check}You deal with me directly, from the first chat to launch and after.</li>
-    <li>${ICONS.check}<span>I work with businesses anywhere in the UK, and I am based in Birmingham (see <a href="/web-design-birmingham/">web design in Birmingham and the West Midlands</a>). Start with an email; after that we can talk by phone, video call or email, whichever suits you.</span></li>
+    <li>${ICONS.check}Start with an email. After that we can talk by phone, video call or email, whichever suits you.</li>
+    <li>${ICONS.check}One fixed price, agreed before any work starts. You pay half when we start and the rest when you are happy, before it goes live.</li>
+    <li>${ICONS.check}You own it all: your web address is in your name, and if you move on I hand over everything at no extra cost.</li>
     <li>${ICONS.check}I speak English and Nepali.</li>
-    <li>${ICONS.check}One fixed price, agreed before any work starts.</li>
   </ul>
   <p class="about-links"><a class="btn btn-ghost" href="${site.social.portfolio}" rel="me noopener">${ICONS.globe} Portfolio</a><a class="btn btn-ghost" href="${site.social.github}" rel="me noopener">${ICONS.github} GitHub</a><a class="btn btn-ghost" href="${site.social.linkedin}" rel="me noopener">${ICONS.linkedin} LinkedIn</a></p>
 </section>
@@ -337,7 +348,7 @@ ${ctaBand()}`;
   return layout({
     title: `About ${site.owner} | ${site.name}`,
     ogTitle: `About ${site.owner}, Hamropedia Digital`,
-    description: `${site.owner} is an AI software engineer in Birmingham who builds fixed-price websites and AI assistants for small businesses across the UK.`,
+    description: `${site.owner} builds fixed-price websites and AI assistants for small businesses all over the UK, explained in plain English. MSc in AI, Aston University.`,
     path: '/about/', section: '/about/', body, version,
     schema: [
       breadcrumbSchema([{ name: 'About me', path: '/about/' }]),

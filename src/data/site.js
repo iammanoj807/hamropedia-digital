@@ -288,8 +288,8 @@ export const faqs = [
     a: 'A chat box on your website or WhatsApp that reads a customer’s question and writes a helpful answer, like a member of staff who knows your price list by heart. It only uses the information you give it.',
   },
   {
-    q: 'Do you only work in Birmingham?',
-    a: 'No. I work with businesses anywhere in the UK, by video call, phone or email.',
+    q: 'Do you work with businesses all over the UK?',
+    a: 'Yes. I work with small businesses anywhere in the UK, by video call, phone or email, so it makes no difference where you are.',
   },
   {
     q: 'I only have a Facebook or Instagram page. Is that enough?',

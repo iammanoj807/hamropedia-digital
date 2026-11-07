@@ -1,6 +1,6 @@
 # Hamropedia Digital
 
-> Hamropedia Digital (digital.hamropedia.com) builds fixed-price websites and practical AI tools for small businesses anywhere in the UK. It is run by Manoj Kumar Thapa, an AI software engineer based in Birmingham (MSc in Artificial Intelligence with Distinction, Aston University; previously a software engineer at Accenture). Prices are fixed and shown in pounds, the client owns their website and domain, and every running cost is explained in plain English. Part of Hamropedia (hamropedia.com).
+> Hamropedia Digital (digital.hamropedia.com) builds fixed-price websites and practical AI tools for small businesses anywhere in the UK. It is run by Manoj Kumar Thapa, an AI software engineer based in the UK (MSc in Artificial Intelligence with Distinction, Aston University; previously a software engineer at Accenture). Prices are fixed and shown in pounds, the client owns their website and domain, and every running cost is explained in plain English. Part of Hamropedia (hamropedia.com).
 
 ## Services
 - [Websites for small businesses](https://digital.hamropedia.com/services/): one-page and 5-page websites, Google Business Profile set-up, online bookings and orders, small shops, website maintenance

@@ -204,7 +204,7 @@ export function renderHome(version) {
       <div>
         <p class="eyebrow">Who you will work with</p>
         <h2>Hi, I am Manoj. You deal with me, from first chat to launch.</h2>
-        <p>I am an AI software engineer in Birmingham, with an MSc in Artificial Intelligence (Distinction) from Aston University. Before that I was a software engineer at Accenture. I also build and run <a href="https://hamropedia.com/">hamropedia.com</a>.</p>
+        <p>I am an AI software engineer working with small businesses all over the UK, with an MSc in Artificial Intelligence (Distinction) from Aston University. Before that I was a software engineer at Accenture. I also build and run <a href="https://hamropedia.com/">hamropedia.com</a>.</p>
         <ul class="ticks">
           <li>${ICONS.check}I explain everything in plain English, and I answer every "silly" question.</li>
           <li>${ICONS.check}If you do not need a website or AI yet, I will tell you, and suggest something cheaper.</li>

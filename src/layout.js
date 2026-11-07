@@ -131,7 +131,7 @@ ${p.body}
   <div class="wrap footer-grid">
     <div class="footer-about">
       <a class="logo" href="/">${ICONS.logo}<span class="logo-text">Hamropedia <b>Digital</b></span></a>
-      <p>Websites and AI for small businesses across the UK, explained in plain English. Run by ${esc(site.owner)}, an AI software engineer in Birmingham.</p>
+      <p>Websites and AI for small businesses across the UK, explained in plain English. Run by ${esc(site.owner)}, an AI software engineer.</p>
       <p><a href="${mailLink()}">${esc(site.email)}</a></p>
     </div>
     <div>
