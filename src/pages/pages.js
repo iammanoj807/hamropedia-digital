@@ -319,7 +319,7 @@ export function renderAbout(version) {
 <section class="wrap section narrow about">
   <figure class="about-photo"><img src="/images/manojkumarthapa.webp" alt="${esc(site.owner)}" width="440" height="519"><figcaption>${esc(site.owner)}<span>AI Software Engineer, United Kingdom</span></figcaption></figure>
   <p>I am ${esc(site.owner)}, an AI software engineer originally from Nepal, now living in the UK. I run Hamropedia Digital, which builds websites and AI tools for small businesses all over the UK: at a fixed price, explained in plain English, and with no contract to tie you in.</p>
-  <p>I have an MSc in Artificial Intelligence (Distinction) from Aston University, and before that I was a software engineer at Accenture. I build AI assistants and tools, like <a href="/examples/#real">Planck AI and CogniGraph</a>, and I build and run <a href="https://hamropedia.com/">hamropedia.com</a>, a website with guides, news in English and Nepali, and free tools.</p>
+  <p>I have an MSc in Artificial Intelligence from Aston University, and before that I was a software engineer at Accenture. I build AI assistants and tools, like <a href="/examples/#real">Planck AI and CogniGraph</a>, and I build and run <a href="https://hamropedia.com/">hamropedia.com</a>, a website with guides, news in English and Nepali, and free tools.</p>
   <h2>What Hamropedia Digital does</h2>
   <ul class="ticks">
     <li>${ICONS.check}<span><b>Websites:</b> a one-page website for ${gbp(packages[0].gbp)} (${packages[0].time.toLowerCase()}), a full website of up to 5 pages for ${gbp(packages[1].gbp)} (${packages[1].time.toLowerCase()}), or online bookings and orders from ${gbp(packages[2].gbp)}. See <a href="/services/">websites</a>.</span></li>
